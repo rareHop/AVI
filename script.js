@@ -7,6 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(() => {
             preloader.style.display = "none";
             container.style.display = "block";
-        }, 2000); // Adjust the timeout duration here (in milliseconds)
+        }, 200); // Adjust the timeout duration here (in milliseconds)
     });
 });
