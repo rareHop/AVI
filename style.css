@@ -5,13 +5,19 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #2c3e50;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
     color: white;
     overflow: hidden;
 }
 
 .container {
     text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .maintenance {
@@ -38,11 +44,18 @@ body {
     text-decoration: underline;
 }
 
+.gear-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
 .gear {
     position: relative;
     width: 100px;
     height: 100px;
-    margin: 2rem auto;
+    margin: 0 10px;
 }
 
 .gear-inner {
@@ -50,6 +63,10 @@ body {
     height: 100%;
     position: relative;
     animation: rotate 5s infinite linear;
+}
+
+.second-gear .gear-inner {
+    animation: rotate-reverse 5s infinite linear;
 }
 
 .bar {
@@ -75,10 +92,26 @@ body {
 }
 
 @keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes rotate-reverse {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+.loader {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto 0;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
