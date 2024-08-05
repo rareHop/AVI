@@ -1,262 +1,84 @@
-a {
-  text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-  padding: 0;
-}
-
-hr {
-  margin: 30px 0;
-  border-color: white;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: " ";
-}
-
-body,
-html {
-  margin: 0;
-  padding: 0;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  color: white;
-}
-
 body {
-  background: url("http://i1040.photobucket.com/albums/b406/purpleswag/ocean_friends_pattern_by_pronouncedyou-d5baaay_zpstnn1b5df.jpg") fixed;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #2c3e50;
+    color: white;
+    overflow: hidden;
 }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.container {
+    text-align: center;
 }
 
-li {
-  display: inline;
+.maintenance {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.underline {
-  width: 40%;
-  margin: 40px auto;
-  display: none;
+.maintenance h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-.home {
-  height: 100vh;
-  width: 100%;
-  background: url("http://i1040.photobucket.com/albums/b406/purpleswag/homepage-background-images-211_zpshfprzfbh.jpg") no-repeat 50% 50%;
-  background-size: cover;
+.maintenance p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
-.navbar {
-  margin: 0 auto;
-  width: 300px;
-  border-bottom: 1px solid white;
-  height: 35px;
-  margin-top: 35px;
-}
-.navbar ul {
-  display: flex;
-  justify-content: space-between;
-}
-.navbar a {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  color: white;
-  text-transform: uppercase;
-}
-.navbar a:hover {
-  color: black;
+.maintenance a {
+    color: #3498db;
+    text-decoration: none;
 }
 
-.home-title {
-  text-align: center;
-  margin: 110px 0;
-}
-.home-title h1 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  color: white;
-  text-transform: uppercase;
-  font-size: 80px;
+.maintenance a:hover {
+    text-decoration: underline;
 }
 
-#add-post, .modal-add-post {
-  display: block;
-  width: 135px;
-  height: 50px;
-  margin: 0 auto;
-  background: none;
-  border: 2px solid white;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  color: white;
-  font-size: 20px;
-  border-radius: 2px;
-  transition: 0.3s ease;
-}
-#add-post:hover, .modal-add-post:hover {
-  background-color: #32A64D;
-  border-color: green;
-  cursor: pointer;
-  color: black;
+.gear {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 2rem auto;
 }
 
-.posts {
-  color: black;
+.gear-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    animation: rotate 5s infinite linear;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: black;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-.modal p {
-  color: black;
-  font-size: 20px;
-  width: 10%;
-}
-.modal ul {
-  margin-top: 50px;
-}
-.modal li {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.modal-content {
-  position: relative;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  animation-name: animatetop;
-  animation-duration: 0.4s;
-  background-color: #fefefe;
-  margin: 8% auto 0;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 60%;
-}
-.modal-content input, .modal-content textarea {
-  width: 75%;
-  border: 2px solid grey;
-  border-radius: 4px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  color: white;
-  color: black;
-  padding: 10px;
-  height: 40px;
-}
-.modal-content textarea {
-  height: initial;
-}
-
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-  to {
+.bar {
+    position: absolute;
+    width: 10px;
+    height: 40px;
+    background: white;
     top: 0;
-    opacity: 1;
-  }
-}
-.close-modal {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.close-modal:hover, .close-modal:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+    left: 45px;
+    transform-origin: center bottom;
 }
 
-.modal-add-post {
-  background-color: #32A64D;
-  border-color: #32A64D;
-  color: black;
-}
-.modal-add-post:hover {
-  background-color: #2D9144;
-  border-color: black;
+.bar:nth-child(1) {
+    transform: rotate(0deg);
 }
 
-.post-container {
-  max-width: 1000px;
-  margin: 100px auto 50px;
-  padding: 25px;
-  background-color: white;
-  border: 1px solid grey;
-}
-.post-container .post-image {
-  width: 200px;
-  float: left;
-  margin-right: 15px;
-}
-.post-container .post-image .post-photo {
-  max-width: 100%;
-  height: auto;
-}
-.post-container .post-content h2 {
-  font-size: 28px;
-}
-.post-container .post-content p {
-  font-size: 16px;
-  margin-top: 25px;
-  text-align: justify;
-  font-family: "Arial";
-  line-height: 25px;
-  white-space: pre-wrap;
-  word-break: break-word;
+.bar:nth-child(2) {
+    transform: rotate(120deg);
 }
 
-.post-info .tags-container {
-  margin-bottom: 30px;
-}
-.post-info .tags-container p {
-  display: inline-block;
-  background-color: #c7c7c7;
-  padding: 3px 10px;
-  font-size: 14px;
-  text-transform: uppercase;
-  margin: 0 30px 15px 0;
+.bar:nth-child(3) {
+    transform: rotate(240deg);
 }
 
-.post-author {
-  display: inline;
-}
-
-.date {
-  float: right;
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
